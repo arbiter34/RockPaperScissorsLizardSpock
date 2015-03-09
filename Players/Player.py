@@ -27,3 +27,5 @@ class Player(object):
     def play(self):
         raise NotImplementedError("Not Yet Implemented")
     
+    def opponentMove(self, move):
+        self._move = move
