@@ -1,0 +1,1 @@
+__all__ = ['Element', 'Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
