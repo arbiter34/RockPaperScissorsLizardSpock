@@ -4,19 +4,25 @@ class Human(Player.Player):
     
     def play(self):
         choice = 10
+        #Loop until valid input
         while (True):
-            print("(1) : Rock\n")
-            print("(2) : Paper\n")
-            print("(3) : Scissors\n")
-            print("(4) : Lizard\n")
-            print("(5) : Spock\n")
+            #Print menu
+            for y in range(0, 5):
+                print ("(" + str(y+1) + ") : " + self._optionNames[y] + "\n")
+            
+            #Try catch to validate input
             try:
                 choice = int(input("Enter your move: "))
                 if (choice <= 5 and choice >= 1):
+                    #valid input - break
                     break;
             except ValueError:
+                #invalid input - loop
                 choice = choice
             print("\nInvalid Option, please try again!\n")    
-            
+        
+        #adjust index   
         choice = choice - 1
+
+        #return player object
         return self._options[choice](self._optionNames[choice])
